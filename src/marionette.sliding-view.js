@@ -25,7 +25,7 @@ Mn.SlidingView = Mn.CollectionView.extend({
     // Get our initial boundaries, and then update the collection
     this._lowerBound = _.result(this, 'initialLowerBound');
     this._upperBound = _.result(this, 'initialUpperBound');
-    this._updateCollection();
+    this.updateCollection();
 
     // If no onUpdateEvent was defined, then we set one
     // using the `throttle` method.
@@ -86,7 +86,7 @@ Mn.SlidingView = Mn.CollectionView.extend({
 
     // Defer an update for 50ms. This prevents many renders when scrolling fast.
     this._deferredUpdateId = setTimeout(() => {
-      this._updateCollection();
+      this.updateCollection();
     }, 50);
   },
 
@@ -108,7 +108,7 @@ Mn.SlidingView = Mn.CollectionView.extend({
   // 1. Collection#set performs a 'smart' update at the data layer
   // 2. CollectionView performs a 'smart' update of the view layer
   //    whenever the data layer changes
-  _updateCollection() {
+  updateCollection() {
     this.collection.set(this.pruneCollection(this._lowerBound, this._upperBound));
   }
 });
