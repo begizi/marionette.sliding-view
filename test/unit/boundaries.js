@@ -26,7 +26,7 @@ describe('When boundary methods are specified, and the throttled method is calle
     });
 
     stub(slidingView, 'getUpperBound');
-    spy(slidingView, '_updateCollection');
+    spy(slidingView, 'updateCollection');
   });
 
   afterEach(() => {
@@ -39,7 +39,7 @@ describe('When boundary methods are specified, and the throttled method is calle
     });
 
     it('should not update the collection', () => {
-      expect(slidingView._updateCollection).to.not.have.been.called;
+      expect(slidingView.updateCollection).to.not.have.been.called;
     });
 
     it('should pass the lower bound to the upperBound call', () => {
@@ -56,7 +56,7 @@ describe('When boundary methods are specified, and the throttled method is calle
     });
 
     it('should not update the collection', () => {
-      expect(slidingView._updateCollection).to.not.have.been.called;
+      expect(slidingView.updateCollection).to.not.have.been.called;
     });
   });
 
@@ -67,7 +67,7 @@ describe('When boundary methods are specified, and the throttled method is calle
     });
 
     it('should call the update collection method', () => {
-      expect(slidingView._updateCollection).to.have.been.calledOnce;
+      expect(slidingView.updateCollection).to.have.been.calledOnce;
     });
 
     it('should set the collection correctly', () => {
@@ -85,7 +85,7 @@ describe('When boundary methods are specified, and the throttled method is calle
     });
 
     it('should only update the collection once', () => {
-      expect(slidingView._updateCollection).to.have.been.calledOnce;
+      expect(slidingView.updateCollection).to.have.been.calledOnce;
     });
   });
 
@@ -113,7 +113,7 @@ describe('When boundary methods are specified, and the throttled method is calle
     });
 
     it('should only update the collection once', () => {
-      expect(slidingView._updateCollection).to.have.been.calledOnce;
+      expect(slidingView.updateCollection).to.have.been.calledOnce;
     });
   });
 });
